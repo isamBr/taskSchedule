@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ViewModel="clr-namespace:Gts_Schedule.AppointmentEditor.ViewModels"
+              xmlns:Behaviors="clr-namespace:Gts_Schedule.AppointmentEditor.Behaviors"
+             xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core"
+             xmlns:samplelocal="clr-namespace:Gts_Schedule.AppointmentEditor.Views"      
+             x:Class="Gts_Schedule.AppointmentEditor.Views.AppointmentEditor"
+              xmlns:schedule="clr-namespace:Syncfusion.SfSchedule.XForms;assembly=Syncfusion.SfSchedule.XForms"
+             Title="GTS Appointment" BackgroundColor="Blue">
+    
+    <ContentPage.Content>
+        <Grid x:Name="grid_layout">
+            <Grid.Resources>
+                <ResourceDictionary>
+                    
+                </ResourceDictionary>
+            </Grid.Resources>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*" />
+                <RowDefinition Height="0.9*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" BackgroundColor="#F7F7F7">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.1*" />
+                    <ColumnDefinition Width="0.7*" />
+                    <ColumnDefinition Width="0.2*" />
+                    <ColumnDefinition Width="0.2*" />
+                </Grid.ColumnDefinitions>
+                <Button
+                    x:Name="scheduleView_Button"
+                    Grid.Column="0"
+                    BackgroundColor="#F7F7F7"
+                    HorizontalOptions="Start"
+                    Image="scheduleview.png" 
+                    VerticalOptions="Center" />
+                <Label
+                    x:Name="Month_Button"
+                    Grid.Column="1"
+                    BackgroundColor="#F7F7F7"
+                    FontSize="20"
+                    HorizontalOptions="Start"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+                <Button
+                    x:Name="Setting_Button"
+                    Grid.Column="2"
+                    BackgroundColor="#F7F7F7"
+                    HorizontalOptions="End"
+                    Image="check.png"
+                    VerticalOptions="Center" />
+                <Button
+                    x:Name="Editor_Button"
+                    Grid.Column="3"
+                    BackgroundColor="#F7F7F7"
+                    HorizontalOptions="End"
+                    Image="schedule_editor.png"
+                    VerticalOptions="Center" />
+            </Grid>
+            <schedule:SfSchedule
+                x:Name="Schedule"
+                Grid.Row="1"
+                Margin="0,-10,0,0"
+                DataSource="{Binding ListOfMeeting}"
+                HeaderHeight="0"
+                HorizontalOptions="FillAndExpand"
+                ScheduleView="WeekView"
+                ShowAppointmentsInline="True"
+                VerticalOptions="FillAndExpand">
+                <schedule:SfSchedule.WorkWeekViewSettings>
+                    <schedule:WorkWeekViewSettings WorkEndHour="16" WorkStartHour="8" />
+                </schedule:SfSchedule.WorkWeekViewSettings>
+                <schedule:SfSchedule.AppointmentMapping>
+                    <schedule:ScheduleAppointmentMapping
+                        ColorMapping="color"
+                        EndTimeMapping="To"
+                        IsAllDayMapping="IsAllDay"
+                        StartTimeMapping="From"
+                        SubjectMapping="responsible"
+                        MinHeightMapping="MinimumHeight"
+                        StartTimeZoneMapping="StartTimeZone"
+                        EndTimeZoneMapping="EndTimeZone"/>
+                </schedule:SfSchedule.AppointmentMapping>
+                <schedule:SfSchedule.BindingContext>
+                    <ViewModel:AppointmentEditorViewModel />
+                </schedule:SfSchedule.BindingContext>
+
+            </schedule:SfSchedule>
+            <!--BindingContext="{Binding}"-->
+            <ListView
+                x:Name="scheduleview_list"
+                Grid.Row="1"
+                BackgroundColor="White"    
+                HasUnevenRows="False"
+                HeightRequest="200"
+                HorizontalOptions="Start"
+                ItemsSource="{Binding ScheduleTypeCollection}"
+                RowHeight="45"
+                SelectedItem="0"
+                SeparatorVisibility="None"
+                VerticalOptions="Start"
+                WidthRequest="200">
+                <ListView.BindingContext>
+                    <ViewModel:AppointmentEditorViewModel />
+                </ListView.BindingContext>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid Margin="20,10,0,0">
+                                    <Label Text="{Binding ScheduleType}" TextColor="Black" />
+                                </Grid>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <samplelocal:EditorLayout
+                x:Name="editor"
+                Grid.RowSpan="2"
+                IsVisible="False" />
+        </Grid>
+    </ContentPage.Content>
+
+    
+
+    <ContentPage.Behaviors>
+        <Behaviors:AppointmentEditorBehavior />
+    </ContentPage.Behaviors>
+
+
+    <!--<ContentPage.PropertyView>
+        <Grid BackgroundColor="White" 
+                HorizontalOptions="FillAndExpand" 
+                VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" x:Name="scheduleTimeZoneLabel" 
+                    VerticalOptions="Center"                 
+                    Text="Time Zone" 
+                    FontSize="15" TextColor="Gray" />
+            <Picker x:Name="timeZonePicker" Grid.Row="1" 
+                        VerticalOptions="Center" 
+                        HorizontalOptions="FillAndExpand">
+            </Picker>
+        </Grid>
+    </ContentPage.PropertyView>-->
+
+</ContentPage>

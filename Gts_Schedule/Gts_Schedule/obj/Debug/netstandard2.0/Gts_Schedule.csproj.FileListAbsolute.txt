@@ -1,0 +1,13 @@
+C:\Users\Isam\Documents\Gts_Schedule\Gts_Schedule\Gts_Schedule\bin\Debug\netstandard2.0\Gts_Schedule.deps.json
+C:\Users\Isam\Documents\Gts_Schedule\Gts_Schedule\Gts_Schedule\bin\Debug\netstandard2.0\Gts_Schedule.dll
+C:\Users\Isam\Documents\Gts_Schedule\Gts_Schedule\Gts_Schedule\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Isam\Documents\Gts_Schedule\Gts_Schedule\Gts_Schedule\obj\Debug\netstandard2.0\AppointmentEditor\Views\AppointmentEditor.xaml.g.cs
+C:\Users\Isam\Documents\Gts_Schedule\Gts_Schedule\Gts_Schedule\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\Isam\Documents\Gts_Schedule\Gts_Schedule\Gts_Schedule\obj\Debug\netstandard2.0\Gts_Schedule.AssemblyInfoInputs.cache
+C:\Users\Isam\Documents\Gts_Schedule\Gts_Schedule\Gts_Schedule\obj\Debug\netstandard2.0\Gts_Schedule.AssemblyInfo.cs
+C:\Users\Isam\Documents\Gts_Schedule\Gts_Schedule\Gts_Schedule\bin\Debug\netstandard2.0\Gts_Schedule.pdb
+C:\Users\Isam\Documents\Gts_Schedule\Gts_Schedule\Gts_Schedule\obj\Debug\netstandard2.0\AppointmentEditor\Views\EditorLayout.xaml.g.cs
+C:\Users\Isam\Documents\Gts_Schedule\Gts_Schedule\Gts_Schedule\obj\Debug\netstandard2.0\Gts_Schedule.dll
+C:\Users\Isam\Documents\Gts_Schedule\Gts_Schedule\Gts_Schedule\obj\Debug\netstandard2.0\Gts_Schedule.pdb
+C:\Users\Isam\Documents\Gts_Schedule\Gts_Schedule\Gts_Schedule\obj\Debug\netstandard2.0\Gts_Schedule.csprojAssemblyReference.cache
+C:\Users\Isam\Documents\Gts_Schedule\Gts_Schedule\Gts_Schedule\obj\Debug\netstandard2.0\XamlC.stamp

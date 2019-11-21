@@ -1,0 +1,10 @@
+﻿<Samples>
+
+	
+  <Sample Name = "AppointmentEditor" Platforms="Android,iOS,UWP" Title = "Appointment Editor"  SearchTags= "allday, celltapped, event, timezone"  
+          Description = "Showcases date navigation capability with appointment editing such as start time, end time, subject, time zone, and more."/>
+
+</Samples>
+
+
+
